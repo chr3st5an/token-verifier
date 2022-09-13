@@ -12,7 +12,7 @@ along with `colorama` for colored output.
 
 This script is licensed under the MIT license.
 
-Found a bug? => https://github.com/chr3st5an/token_verfier
+Found a bug? => https://github.com/chr3st5an/token-verifier
 """
 
 from typing import Any, Callable, Coroutine, Dict, Set, Union
