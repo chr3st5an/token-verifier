@@ -72,11 +72,11 @@ def stopwatch(coroutinefunction: Callable[..., Coroutine[None, None, Any]], /):
     """
 
     @wraps(coroutinefunction)
-    async def wrapper(*args, **kwargs) -> Any:
+    async def wrapper(*args: Any, **kwargs: Any) -> Any:
         start  = monotonic()
         result = await coroutinefunction(*args, **kwargs)
 
-        print(f"{Fore.GREEN}|\n|\n{round(monotonic() - start, 2)}s{Fore.RESET}")
+        print(f"{Fore.GREEN}|\n|\n{monotonic() - start:.2f}s{Fore.RESET}")
 
         return result
 
