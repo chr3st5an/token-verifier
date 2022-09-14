@@ -15,6 +15,10 @@ This script is licensed under the MIT license.
 Found a bug? => https://github.com/chr3st5an/token-verifier
 """
 
+__author__ = "chr3st5an"
+__version__ = "1.0.0"
+__license__ = "MIT"
+
 from typing import Any, Callable, Coroutine, Dict, Set, Union
 from string import ascii_letters, ascii_lowercase, digits
 from functools import wraps
@@ -24,28 +28,20 @@ import asyncio
 import json
 import os
 
-# 3rd party packages
 from aiohttp import ClientSession, DummyCookieJar
 from colorama import Fore
 
 
-# metadata
-__author__  = "chr3st5an"
-__version__ = "1.0.0"
-__license__ = "MIT"
-
-
-# constants
 ALPHANUMERIC = ascii_letters + digits
-ENDPOINT     = "https://discord.com/api/v9/users/@me/relationships"
+ENDPOINT = "https://discord.com/api/v9/users/@me/relationships"
 
 
-def randstr(length: int, /, population: str = ALPHANUMERIC) -> str:
+def randstr(__length: int, /, population: str = ALPHANUMERIC) -> str:
     """Generate a random string
 
     Parameters
     ----------
-    length : str
+    __length : str
         The desired string length
     population : str, optional
         The charset that gets used to generate the
@@ -53,12 +49,11 @@ def randstr(length: int, /, population: str = ALPHANUMERIC) -> str:
         are used
     """
 
-    return "".join(choices(population, k=length))
+    return "".join(choices(population, k=__length))
 
 
 def load_tokens(path: Union[os.PathLike, str]) -> Set[str]:
-    """Load the tokens from the given file
-    """
+    """Load the tokens from the given file"""
 
     try:
         with open(path) as file:
@@ -115,11 +110,13 @@ async def verify_token(session: ClientSession, /, token: str) -> None:
         if response.status in range(200, 205):
             return print(f"{Fore.GREEN}[+]{Fore.RESET} {token}")
 
-        print(f"{Fore.RED}[-]{Fore.RESET} {token}")
+        return print(f"{Fore.RED}[-]{Fore.RESET} {token}")
 
 
 @stopwatch
 async def main() -> None:
+    """Run the script"""
+
     tokens = load_tokens(
         input(f"{Fore.LIGHTBLUE_EX}[FILE]{Fore.RESET} Tokens: ")
     )

@@ -27,7 +27,7 @@
 
 ---
 
-This program allows you to easily check which discord user tokens are valid and which aren't. The main goal of this program is it, to do it fast and reliable while being relative resource lightweight. This is achieved by using an asynchronously programming style.
+This script allows you to easily check which discord user tokens are valid and which aren't. The main goal of this script is it, to do it fast and reliable while being relative resource lightweight. This is achieved by using an asynchronously programming style.
 
 </br>
 
@@ -87,9 +87,9 @@ You can use this tool by simple running the `verifier.py` file:
 python verifier.py
 ```
 
-The program will now ask you for the file which contains the tokens. It's import to either enter an absolute or relative path to the file, e.g. `C:\Users\Example\tokens.txt` or `..\tokens.txt`. If the tokens aren't saved in a file yet, create a simple `txt` file and save them in there.
+The script will now ask you for the file which contains the tokens. It's import to either enter an absolute or relative path to the file, e.g. `C:\Users\Example\tokens.txt` or `..\tokens.txt`. If the tokens aren't saved in a file yet, create a simple `txt` file and save them in there.
 
-Once you enter path, the program will do it's magic and show you which tokens are valid and which aren't.
+Once you enter path, the script will do it's magic and show you which tokens are valid and which aren't.
 
 </br>
 
